@@ -1,7 +1,5 @@
-from array import array
-from curses.ascii import isalpha
 import os
-import string
+
 
 with open ("Lucas da Silva Santos - ex03.c", "r") as file:
     contador = {"espaço": 0 , "tab": 0, "quebra de linha": 0}
