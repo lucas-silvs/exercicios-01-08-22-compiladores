@@ -1,0 +1,3 @@
+Relatório AC01 - Compiladores:
+
+Dificuldades Encontradas: o projeto foi relativente tranquilo, porém a maior dificuldades foi  o Regex personalizado para cada palavra
