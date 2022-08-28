@@ -20,6 +20,6 @@ with open ("Lucas da Silva Santos - ex03.c", "r") as file:
 
 print("Tamanho do arquivo lido: " + str( os.stat("Lucas da Silva Santos - ex03.c").st_size) + " bytes")
 print("Número de linhas do arquivo lido: " + str(numLinhas))
-for keys in contador.keys():
-    if(contador[keys]!= 0): 
-        print( str(keys) + " : " + str(contador[keys]))
+
+for char in sorted(contador, key=lambda item:contador[item]):
+    print(f'{char}: {contador[char]}')
