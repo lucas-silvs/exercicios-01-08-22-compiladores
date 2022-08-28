@@ -6,6 +6,5 @@ with open ("Lucas da Silva Santos - ex03.c", "r") as file, open("ex03.out", "w+"
 
     for linhas in file:
         for i in range(len(alfabeto)):
-            regex = r"\b" + alfabeto[i] + r"\b"  
-            linhas = re.sub(regex, alfabeto[i].upper(), linhas)
+            linhas = re.sub(r"\b" + alfabeto[i] + r"\b", alfabeto[i].upper(), linhas)
         writefile.write(linhas)
