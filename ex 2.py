@@ -1,8 +1,3 @@
-# - ler o arquivo em C
-# - Iterar sobre o arquivo e encontrar as palavras reservadas
-# - Colocar as palavras reservadas em MAIÚSCULO 
-# - Salvar no arquivo
-
 import re
 
 with open ("Lucas da Silva Santos - ex03.c", "r") as file, open("ex03.out", "w+") as writefile:
