@@ -1,18 +1,27 @@
+from array import array
+from curses.ascii import isalpha
 import os
+import string
 
 with open ("Lucas da Silva Santos - ex03.c", "r") as file:
-    alfabeto = ["a" , "b" , "c" , "d" , "e" , "f" , "g" , "h" , "i" , "j" , "k" , "l" ,"m" ,"n" ,"o" ,"p" ,"q" ,"r" ,"s" ,"t" ,"u" ,"v" ,"w" ,"x" ,"y" , "z", "1", "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "0", " "]
-
-    count = [0 for i in range(len(alfabeto))] 
+    contador = {"espaço": 0 , "tab": 0, "quebra de linha": 0}
     numLinhas = 0
     for linhas in file:
         numLinhas+=1
-        for i in range(len(alfabeto)):
-            count[i] = count[i] + linhas.count(alfabeto[i])
+        for char in linhas:
+            if(char == "\t"):
+                contador["tab"] += 1
+            elif(char == " "):
+                contador["espaço"] += 1
+            elif(char == "\n"):
+                contador["quebra de linha"] += 1
+            elif (char not in contador.keys() and char!="\t" and char!= " " and char!="\n"):
+                contador[char] = 1
+            else:
+                contador[char] += 1
 
 print("Tamanho do arquivo lido: " + str( os.stat("Lucas da Silva Santos - ex03.c").st_size) + " bytes")
 print("Número de linhas do arquivo lido: " + str(numLinhas))
-
-for i in range(len(alfabeto)):
-    if(count[i]!= 0):
-        print( alfabeto[i] + " : " + str(count[i]))
+for keys in contador.keys():
+    if(contador[keys]!= 0): 
+        print( str(keys) + " : " + str(contador[keys]))
